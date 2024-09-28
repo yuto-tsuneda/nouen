@@ -2,9 +2,9 @@
 
 <div class="about">
   <div class="about__topPic">
-    <img class="about__topPic__left" src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image01.webp" alt="やぎ">
-    <img class="about__topPic__mid" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ">
-    <img class="about__topPic__bottom" src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image02.webp" alt="トマト">
+    <div class="about__topPic__left"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image01.webp" alt="やぎ"></div>
+    <div class="about__topPic__mid"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></div>
+    <div class="about__topPic__bottom"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image02.webp" alt="トマト"></div>
   </div>
   <div class="about__topDescription">
     <p>自然の恵み農園は、<br>

@@ -1,0 +1,26 @@
+@media screen and (min-width: 901px) {
+  .about {
+    background-color: #f9f9f9;
+  }
+  .about__topPic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+  }
+  .about__topPic__left {
+    width: 20%;
+  }
+  .about__topPic__mid {
+    width: 60%;
+    margin: auto 0;
+  }
+  .about__topPic__mid img {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about__topPic__bottom {
+    width: 20%;
+  }
+}

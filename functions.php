@@ -12,7 +12,7 @@ function theme_enqueue_scripts() {
   wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true );
 
   if(is_front_page()){
-    wp_enqueue_style('front-style', $theme_directory . '/assets/css/front.css', array('common-style'));
+    wp_enqueue_style('front-style', $theme_directory . '/assets/css/front-page.css', array('common-style'));
     wp_enqueue_script( 'front-script', $theme_directory . '/assets/js/front-page.js', array('common-script'), null, true);
   }
 
