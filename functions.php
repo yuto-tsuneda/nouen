@@ -13,7 +13,7 @@ function theme_enqueue_scripts() {
 
   if(is_front_page()){
     wp_enqueue_style('front-style', $theme_directory . '/assets/css/front.css', array('common-style'));
-    wp_enqueue_script( 'front-script', $theme_directory . '/assets/js/front_page.js', array('common-script'), null, true);
+    wp_enqueue_script( 'front-script', $theme_directory . '/assets/js/front-page.js', array('common-script'), null, true);
   }
 
   if(is_singular('news') || is_post_type_archive('news')){
@@ -48,3 +48,28 @@ function theme_enqueue_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
+
+function display_latest_posts() {
+  $args = array(
+      'posts_per_page' => 1, // 表示する記事数
+      'orderby' => 'date',   // 日付順
+      'order' => 'DESC'      // 新しい順に表示
+  );
+
+  $recent_posts = new WP_Query($args);
+
+  if ($recent_posts->have_posts()) :
+      while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
+          <div class="post-item">
+              <a href="<?php the_permalink(); ?>">
+                <p class="top__inner__day">更新日: <?php echo get_the_modified_date('Y.m.d'); ?></p>
+                <h2 class="top__inner__title"><?php the_title(); ?></h2> 
+              </a>
+          </div>
+      <?php endwhile;
+      wp_reset_postdata(); // クエリのリセット
+  else :
+      echo '<p>最新の記事がありません。</p>';
+  endif;
+}

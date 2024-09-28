@@ -2,4 +2,158 @@ $main_color:#93c572;
 $sub_color:#f7b560;
 $txt_color:#555555;
 $bg_color:#f9f9f9;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 
+@media screen and (min-width: 901px){
+  .top{
+    background-image: url(../images/FV.webp);
+    height: 768px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 20px;
+    position: relative;
+
+    &__inner{
+      img{
+        width: 200px;
+        margin: 100px auto 0;
+      }
+
+      &__subtitle{
+        text-align: center;
+        color: #87b16c;
+        text-shadow: 1px 2px 3px #808080;
+        font-size: 50px;
+        margin-top: 10px;
+      }
+
+      &__sp{
+        display: none;
+      }
+
+      &__news{
+        margin-right: 30px;
+        width: 337px;
+        background-color: $sub_color;
+        border-radius: 20px;
+        color: #fff;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        bottom: 30px;
+        box-shadow: 0px 3px 6px #00000029;
+
+        h2{
+          font-size: 20px;
+          padding:10px 0;
+          display: inline-block;
+        }
+      }
+
+      &__day{
+        color: #fff;
+        font-size: 12px;
+        display: inline-block;
+      }
+
+      &__title{
+        color: #fff;
+        font-size: 16px;
+        display: inline-block;
+      }
+
+      &__scroll{
+          position:absolute;
+          bottom:1%;
+          right:50%;
+          animation: arrowmove 1s ease-in-out infinite;
+        
+        a{
+          position: absolute;
+          left: -30px;
+          bottom: 90px;
+          color: #000;
+          font-size: 14px;
+          font-family: 'Josefin Sans', sans-serif;
+          letter-spacing: .2em;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff;
+        }
+        
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            right: -6px;
+            width: 2px;
+            height: 20px;
+            background: #FFF;
+            transform: skewX(-31deg);
+        }
+        
+        &:after{
+          content:"";
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          width: 2px;
+          height: 85px;
+          background:#FFF;
+        }
+        
+        @keyframes arrowmove{
+          0%{bottom:1%;}
+          50%{bottom:5%;}
+          00%{bottom:1%;}
+        }
+        
+        
+      }
+    }
+  }
+
+  .pcHeader{
+    background-color: $bg_color;
+    width: 95%;
+    box-shadow: 0px 3px 6px #00000029;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 45px;
+    
+
+    ul{
+      align-items: center;
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
+      margin-top: 20px;
+    
+    }
+
+    img{
+      height: 30px;
+      margin-left: 40px;
+    }
+
+    li{
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    a{
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    li:nth-of-type(6){
+      background-color: $sub_color;
+      color: #fff;
+      padding:10px 15px;
+      border-radius: 45px;
+    } 
+  }
+}
