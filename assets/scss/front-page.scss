@@ -3,13 +3,21 @@ $sub_color:#f7b560;
 $txt_color:#555555;
 $bg_color:#f9f9f9;
 
+body{
+  color: $txt_color;
+  background-color: $bg_color;
+}
+
 @media screen and (min-width: 901px){
   .about{
     background-color: $bg_color;
+    padding-bottom: 50px;
+
     &__topPic{
       display: flex;
       width: 960px;
       margin: 0 auto;
+      padding-top: 50px;
 
       &__left{
         width: 20%;
@@ -29,5 +37,111 @@ $bg_color:#f9f9f9;
         width: 20%;
       }
     }
+
+    &__topDescription{
+      line-height: 30px;
+      text-align: center;
+      margin-top: -30px;
+
+      p{
+        margin-bottom: 30px;
+      }
+    }
+
+    &__bottomPic{
+      display: flex;
+      justify-content: space-between;
+      width: 960px;
+      margin: 0 auto;
+      margin-top: -50px;
+
+      &__left{
+        width: 18%;
+      }
+
+      &__right{
+        width: 20%;
+      }
+    }
   }
+
+  .project{
+    background-color: #fff;
+    width: 85%;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0 100px 100px 0;
+    padding-bottom: 50px;
+
+    &__title{
+      width: 60%;
+      margin: 0 auto;
+      h2{
+        font-size: 40px;
+        background-image: url(../images/title-line.webp);
+        background-position: 0 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: fit-content;
+        padding-top: 80px;
+      }
+    }
+  }
+
+.tab-container{
+
+}
+
+.tabs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 60%;
+  margin: 30px auto 0;
+  font-size: 20px;
+}
+
+.tab-link {
+  padding: 15px 0;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  width: 190px;
+  text-align: center;
+  color: $sub_color;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.tab-link.active {
+  background-color: $main_color;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+
+  p{
+    width: 60%;
+    margin: 50px auto 0;
+    padding-bottom: 50px;
+    font-size: 15px;
+  }
+}
+
+.image-track{
+  width: 90%;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  div{
+    margin: 0 8px;
+  }
+}
 }

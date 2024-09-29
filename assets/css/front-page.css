@@ -1,6 +1,12 @@
+body {
+  color: #555555;
+  background-color: #f9f9f9;
+}
+
 @media screen and (min-width: 901px) {
   .about {
     background-color: #f9f9f9;
+    padding-bottom: 50px;
   }
   .about__topPic {
     display: -webkit-box;
@@ -8,6 +14,7 @@
     display: flex;
     width: 960px;
     margin: 0 auto;
+    padding-top: 50px;
   }
   .about__topPic__left {
     width: 20%;
@@ -22,5 +29,101 @@
   }
   .about__topPic__bottom {
     width: 20%;
+  }
+  .about__topDescription {
+    line-height: 30px;
+    text-align: center;
+    margin-top: -30px;
+  }
+  .about__topDescription p {
+    margin-bottom: 30px;
+  }
+  .about__bottomPic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
+    margin-top: -50px;
+  }
+  .about__bottomPic__left {
+    width: 18%;
+  }
+  .about__bottomPic__right {
+    width: 20%;
+  }
+  .project {
+    background-color: #fff;
+    width: 85%;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+    border-radius: 0 100px 100px 0;
+    padding-bottom: 50px;
+  }
+  .project__title {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .project__title h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 80px;
+  }
+  .tabs {
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    margin: 30px auto 0;
+    font-size: 20px;
+  }
+  .tab-link {
+    padding: 15px 0;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    width: 190px;
+    text-align: center;
+    color: #f7b560;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  }
+  .tab-link.active {
+    background-color: #93c572;
+    color: white;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  .tab-content.active p {
+    width: 60%;
+    margin: 50px auto 0;
+    padding-bottom: 50px;
+    font-size: 15px;
+  }
+  .image-track {
+    width: 90%;
+  }
+  .image-track img {
+    width: 100%;
+    height: auto;
+  }
+  .image-track div {
+    margin: 0 8px;
   }
 }
