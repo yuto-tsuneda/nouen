@@ -285,4 +285,55 @@ body a {
     margin-top: 20px;
     display: inline-block;
   }
+  .access {
+    margin-top: 120px;
+    width: 960px;
+    margin: 0 auto;
+  }
+  .access h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 80px;
+    margin: 0 auto 100px;
+  }
+  .access__information {
+    background: -webkit-gradient(linear, left top, right top, from(#93c572), color-stop(25%, #93c572), color-stop(25%, #fff), to(#fff));
+    background: linear-gradient(90deg, #93c572 0%, #93c572 25%, #fff 25%, #fff 100%);
+    border-radius: 100px;
+  }
+  .access__information table {
+    border-spacing: 0px;
+    width: 100%;
+    padding: 80px 0 0 0;
+  }
+  .access__information th {
+    font-size: 20px;
+    width: 25%;
+    padding: 10px 0 0 40px;
+    text-align: left;
+  }
+  .access__map table {
+    padding-top: 30px;
+  }
+  .access__map a {
+    text-decoration: underline;
+    font-size: 16px;
+  }
+  .access__map td {
+    width: 100%;
+    padding: 0;
+  }
+  .access__map th {
+    vertical-align: top;
+    padding-top: 40px;
+  }
+  .access__map iframe {
+    border-radius: 0 0 100px 0;
+  }
 }

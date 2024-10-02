@@ -138,7 +138,40 @@
   <div class="notice__right">
     <?php echo display_recent_posts_with_limit(3); ?>
   </div>
+</div>
 
+<div class="access">
+  <h2>アクセス</h2>
+  <div class="access__information">
+    <table>
+      <tr>
+        <th>会社名</th>
+        <td>株式会社自然の恵み農園</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒123-4567 千葉県〇〇市××町1丁目23-45</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>012-3456-7890</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>10:00〜18:00（土日祝を除く）</td>
+      </tr>
+    </table>
+    <div class="access__map">
+      <table>
+        <tr>
+          <th>Googleマップ<br>
+            <a href="https://maps.app.goo.gl/CHDnqUDc3iJEF3YY8">地図を拡大表示</a>
+          </th>
+          <td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6475.37385677559!2d140.060151!3d35.758499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60227fc8bf976e9f%3A0x90dbab8929ab17d!2z5Zm05rC0!5e0!3m2!1sja!2sjp!4v1727875919029!5m2!1sja!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
 
 
