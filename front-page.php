@@ -89,7 +89,7 @@
     <p>はい、私たちの農園では有機栽培の原則に従って野菜と果物を栽培しています。<br>
     化学肥料や農薬を極力使用せず、土壌と作物の健康を第一に考えております。</p>
   </div>
-</div>
+  </div>
 
 <div class="accordion">
   <div class="questionTitle">
@@ -125,7 +125,21 @@
     <p>春にはイチゴ、夏にはトマトや茄子、秋にはカボチャやリンゴ、冬にはブロッコリーやみかん など、季節に応じた野菜、果物を提供、収穫体験することができます。</p>
   </div>
 </div>
+</div>
+
+
+<div class="notice">
+  <div class="notice__left">
+    <h2>お知らせ</h2>
+    <p>季節の農作物のお知らせ、見学ツアーのご案内、<br>
+    オンライン販売セールのお知らせなど、自然の恵み農園の最新情報をお届けします。</p>
+    <a href="#">View more</a>
+  </div>
+  <div class="notice__right">
+    <?php echo display_recent_posts_with_limit(3); ?>
+  </div>
 
 </div>
+
 
 <?php get_footer(); ?>

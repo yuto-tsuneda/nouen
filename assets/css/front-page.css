@@ -3,6 +3,12 @@ body {
   color: #555555;
   background-color: #f9f9f9;
 }
+body li {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+}
 
 @media screen and (min-width: 901px) {
   .about {
@@ -141,7 +147,7 @@ body {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    padding-top: 80px;
+    padding-top: 120px;
     margin: 0 auto;
   }
   .accordion {
@@ -215,5 +221,68 @@ body {
     transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
     transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* 回転アニメーション */
+  }
+  .notice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 120px;
+  }
+  .notice__left {
+    width: 50%;
+    margin-top: 100px;
+  }
+  .notice__left h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 0 0 20%;
+  }
+  .notice__left p {
+    margin: 50px 0 30px 20%;
+    width: 400px;
+  }
+  .notice__left a {
+    padding: 10px 40px;
+    border: 2px solid #93c572;
+    display: block;
+    border-radius: 40px;
+    text-decoration: none;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    color: #93c572;
+  }
+  .notice__right {
+    width: 50%;
+    padding: 40px 40px;
+    background-color: #fff;
+    border-radius: 100px 0 0 100px;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  }
+  .notice__right .post-date {
+    margin-right: 23px;
+    margin-top: 30px;
+    display: inline-block;
+  }
+  .notice__right .post-category {
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #93c572;
+    color: #fff;
+  }
+  .notice__right .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+    margin-top: 20px;
+    display: inline-block;
   }
 }

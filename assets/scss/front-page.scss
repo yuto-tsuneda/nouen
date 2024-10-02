@@ -6,6 +6,14 @@ $bg_color:#f9f9f9;
 body{
   color: $txt_color;
   background-color: $bg_color;
+  
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
 }
 
 @media screen and (min-width: 901px){
@@ -157,7 +165,7 @@ body{
         background-size: 100%;
         background-repeat: no-repeat;
         width: fit-content;
-        padding-top: 80px;
+        padding-top: 120px;
         margin: 0 auto;
       }
     }
@@ -226,5 +234,72 @@ body{
   .toggle.open .icon {
     transform: rotate(45deg); /* 回転角度 */
     transition: transform 0.3s ease; /* 回転アニメーション */
+  }
+
+  .notice{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 120px;
+
+    &__left{
+      width: 50%;
+      margin-top: 100px;
+
+      h2{
+        font-size: 40px;
+        background-image: url(../images/title-line.webp);
+        background-position: 0 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: fit-content;
+        margin: 0 0 0 20%;
+      }
+
+      p{
+        margin: 50px 0 30px 20%;
+        width: 400px;
+      }
+
+      a{
+        padding: 10px 40px;
+        border: 2px solid $main_color;
+        display: block;
+        border-radius: 40px;
+        text-decoration: none;
+        width: 120px;
+        margin: 0 auto;
+        text-align: center;
+        color: $main_color;
+      }
+    }
+
+    &__right{
+      width: 50%;
+      padding: 40px 40px;
+      background-color: #fff;
+      border-radius: 100px 0 0 100px;
+      box-shadow: 0px 3px 6px #00000029;
+
+      .post-date{
+        margin-right: 23px;
+        margin-top: 30px;
+        display: inline-block;
+      }
+
+      .post-category{
+        padding: 5px 20px;
+        border-radius: 5px;
+        background-color: $main_color;
+        color: #fff;
+      }
+
+      .post-title{
+        font-size: 20px;
+        font-weight: bold;
+        color:inherit;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    }
   }
 }

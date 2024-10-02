@@ -74,3 +74,32 @@ function display_latest_posts() {
       echo '<p>最新の記事がありません。</p>';
   endif;
 }
+
+function display_recent_posts_with_limit($num_posts = 3) {
+  // 最新記事を取得するクエリ
+  $recent_posts = new WP_Query(array(
+      'posts_per_page' => $num_posts,  // 表示する投稿数を引数で変更可能に
+      'post_status'    => 'publish',   // 公開された投稿のみ
+  ));
+
+  if ($recent_posts->have_posts()) {
+      $output = '<ul class="recent-posts-list">';
+      while ($recent_posts->have_posts()) {
+          $recent_posts->the_post();
+          $output .= '<li class="recent-post-item">';
+          $output .= '<span class="post-date">' . get_the_date('Y,m,d') . '</span>';
+          $output .= '<span class="post-category">' . get_the_category_list(', ') . '</span>';
+          $output .= '<br>';
+          $output .= '<a class="post-title" href="' . get_permalink() . '">' . get_the_title() . '</a>';
+          $output .= '</li>';
+      }
+      $output .= '</ul>';
+      
+      // クエリをリセット
+      wp_reset_postdata();
+  } else {
+      $output = '<p>新着記事はありません。</p>';
+  }
+
+  return $output;  // 関数の戻り値としてHTMLを返す
+}
