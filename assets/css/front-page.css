@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   color: #555555;
   background-color: #f9f9f9;
@@ -125,5 +126,94 @@ body {
   }
   .image-track div {
     margin: 0 8px;
+  }
+  .question {
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  .question__title h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 80px;
+    margin: 0 auto;
+  }
+  .accordion {
+    border: 3px solid #93c572;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    padding: 12px 40px;
+    margin-top: 50px;
+    background-color: #fff;
+    position: relative;
+  }
+  .accordion::after {
+    position: absolute;
+    top: calc(50% - 7.5px);
+    left: -3px;
+    content: "";
+    width: calc(6px + 100%);
+    border-top: 15px solid #fff;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+  .questionTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 10;
+    position: relative;
+  }
+  .questionTitle h3 {
+    width: 80%;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .questionTitle__q {
+    color: #93c572;
+    font-size: 35px;
+    margin-right: 20px;
+  }
+  .toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+  .answer {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .answer__a {
+    color: #f7b560;
+    font-size: 35px;
+    margin-right: 20px;
+  }
+  .toggle.open .icon {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); /* 回転角度 */
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* 回転アニメーション */
   }
 }

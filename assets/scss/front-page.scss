@@ -144,4 +144,87 @@ body{
     margin: 0 8px;
   }
 }
+
+  .question{
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    &__title{
+      h2{
+        font-size: 40px;
+        background-image: url(../images/title-line.webp);
+        background-position: 0 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: fit-content;
+        padding-top: 80px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .accordion {
+    border: 3px solid $main_color;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    padding: 12px 40px;
+    margin-top: 50px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .accordion::after {
+    position: absolute;
+    top: calc(50% - 7.5px);
+    left: -3px;
+    content: "";
+    width: calc(6px + 100%);
+    border-top: 15px solid  #fff;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+
+  .questionTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+
+    h3{
+      width: 80%;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &__q{
+      color: $main_color;
+      font-size: 35px;
+      margin-right: 20px;
+    }
+  }
+  
+  .toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .answer {
+    margin-top: 20px;
+    display: flex;
+
+    &__a{
+      color: $sub_color;
+      font-size: 35px;
+      margin-right: 20px;
+    }
+  }
+
+  .toggle.open .icon {
+    transform: rotate(45deg); /* 回転角度 */
+    transition: transform 0.3s ease; /* 回転アニメーション */
+  }
 }

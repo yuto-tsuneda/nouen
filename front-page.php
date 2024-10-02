@@ -75,7 +75,57 @@
 </div>
 
 <div class="question">
-  
+  <div class="question__title">
+    <h2>よくあるご質問</h2>
+  </div>
+
+  <div class="accordion">
+  <div class="questionTitle">
+    <h3><span class="questionTitle__q">Q</span>農園の野菜や果物は有機栽培ですか？</h3>
+    <button class="toggle"><span class="icon">+</span></button>
+  </div>
+  <div class="answer" style="display: none;">
+    <span class="answer__a">A</span>
+    <p>はい、私たちの農園では有機栽培の原則に従って野菜と果物を栽培しています。<br>
+    化学肥料や農薬を極力使用せず、土壌と作物の健康を第一に考えております。</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="questionTitle">
+    <h3><span class="questionTitle__q">Q</span>農園での見学や体験ツアーは行っていますか？</h3>
+    <button class="toggle"><span class="icon">+</span></button>
+  </div>
+  <div class="answer" style="display: none;">
+    <span class="answer__a">A</span>
+    <p>はい、農園での見学や体験ツアーを随時開催しています。<br>
+    農場の日常や農作業を親しみやすく説明し、実際に農園での体験を楽しむことができます。</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="questionTitle">
+    <h3><span class="questionTitle__q">Q</span>オンラインで注文した農産物はどのように配送されますか？</h3>
+    <button class="toggle"><span class="icon">+</span></button>
+  </div>
+  <div class="answer" style="display: none;">
+    <span class="answer__a">A</span>
+    <p>オンラインで注文いただいた農産物は、専用の梱包で新鮮さを保ったまま、<br>
+    指定された配送先にお届けします。</p>
+  </div>
+</div>
+
+  <div class="accordion">
+  <div class="questionTitle">
+    <h3><span class="questionTitle__q">Q</span>農園で提供される季節ごとの野菜や果物の品種は何ですか？</h3>
+    <button class="toggle"><span class="icon">+</span></button>
+  </div>
+  <div class="answer" style="display: none;">
+    <span class="answer__a">A</span>
+    <p>春にはイチゴ、夏にはトマトや茄子、秋にはカボチャやリンゴ、冬にはブロッコリーやみかん など、季節に応じた野菜、果物を提供、収穫体験することができます。</p>
+  </div>
+</div>
+
 </div>
 
 <?php get_footer(); ?>

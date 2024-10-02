@@ -24,3 +24,17 @@ jQuery(document).ready(function($) {
       dots: false,            // ナビゲーションのドットを表示
   });
 });
+
+jQuery(document).ready(function($) {
+  $('.toggle').on('click', function() {
+    var $answer = $(this).closest('.accordion').find('.answer');
+    $answer.slideToggle();
+
+    // ボタンの状態をアニメーションで切り替え
+    $(this).toggleClass('open');
+
+    // アイコンのテキストを "+" と "-" に切り替え
+    var $icon = $(this).find('.icon');
+    $icon.text($icon.text() === '+' ? '-' : '+');
+  });
+});
