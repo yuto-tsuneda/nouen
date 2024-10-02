@@ -323,6 +323,7 @@ body{
       
       background: linear-gradient(90deg,$main_color 0%,$main_color 25%, #fff 25%, #fff 100%);
       border-radius: 100px;
+      box-shadow: 0px 3px 6px #00000029;
 
       table{
         border-spacing: 0px;
@@ -338,6 +339,7 @@ body{
       }
 
       td{
+        padding-left:50px;
       }
     }
 
@@ -364,6 +366,51 @@ body{
 
       iframe{
         border-radius: 0 0 100px 0;
+      }
+    }
+  }
+
+  .contact{
+
+    background-color: $sub_color;
+    border-radius: 50px;
+    color: #fff;
+    width: 960px;
+    text-align: center;
+    margin: 120px auto;
+    padding-bottom: 60px;
+    box-shadow: 0px 3px 6px #00000029;
+
+    h2{
+      font-size: 40px;
+      padding: 60px 0 30px;
+    }
+
+    p{
+      font-size: 18px;
+    }
+
+    a{
+      padding: 15px 40px;
+      border: 2px solid $main_color;
+      display: block;
+      border-radius: 40px;
+      text-decoration: none;
+      width: 200px;
+      margin: 50px auto;
+      text-align: center;
+      color: $main_color;
+      background-color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &__bold{
+      font-size: 20px;
+      font-weight: bold;
+
+      span{
+        font-size: 30px;
       }
     }
   }

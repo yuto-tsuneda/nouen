@@ -174,5 +174,14 @@
   </div>
 </div>
 
+<div class="contact">
+  <h2>お問い合わせ</h2>
+  <p>お仕事のご相談、農園体験、牧場の見学、その他ご質問<br>
+  お気軽にお問い合わせください。</p>
+  <a href="#">お問い合わせ</a>
+  <p class="contact__bold">問い合わせ番号：<span>123-567-8901</span></p>
+  <p class="contact__bold">【受付時間】10:00 ~ 18:00（土日祝を除く）</p>
+</div>
+
 
 <?php get_footer(); ?>

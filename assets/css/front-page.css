@@ -306,6 +306,8 @@ body a {
     background: -webkit-gradient(linear, left top, right top, from(#93c572), color-stop(25%, #93c572), color-stop(25%, #fff), to(#fff));
     background: linear-gradient(90deg, #93c572 0%, #93c572 25%, #fff 25%, #fff 100%);
     border-radius: 100px;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
   }
   .access__information table {
     border-spacing: 0px;
@@ -317,6 +319,9 @@ body a {
     width: 25%;
     padding: 10px 0 0 40px;
     text-align: left;
+  }
+  .access__information td {
+    padding-left: 50px;
   }
   .access__map table {
     padding-top: 30px;
@@ -335,5 +340,44 @@ body a {
   }
   .access__map iframe {
     border-radius: 0 0 100px 0;
+  }
+  .contact {
+    background-color: #f7b560;
+    border-radius: 50px;
+    color: #fff;
+    width: 960px;
+    text-align: center;
+    margin: 120px auto;
+    padding-bottom: 60px;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  }
+  .contact h2 {
+    font-size: 40px;
+    padding: 60px 0 30px;
+  }
+  .contact p {
+    font-size: 18px;
+  }
+  .contact a {
+    padding: 15px 40px;
+    border: 2px solid #93c572;
+    display: block;
+    border-radius: 40px;
+    text-decoration: none;
+    width: 200px;
+    margin: 50px auto;
+    text-align: center;
+    color: #93c572;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .contact__bold {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .contact__bold span {
+    font-size: 30px;
   }
 }
