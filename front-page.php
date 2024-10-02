@@ -2,9 +2,9 @@
 
 <div class="about">
   <div class="about__topPic">
-    <div class="about__topPic__left"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image01.webp" alt="やぎ"></div>
+    <div class="about__topPic__left about__fadeIn time1"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image01.webp" alt="やぎ"></div>
     <div class="about__topPic__mid"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></div>
-    <div class="about__topPic__bottom"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image02.webp" alt="トマト"></div>
+    <div class="about__topPic__bottom about__fadeIn time2"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image02.webp" alt="トマト"></div>
   </div>
   <div class="about__topDescription">
     <p>自然の恵み農園は、<br>
@@ -18,8 +18,8 @@
     </p>
   </div>
   <div class="about__bottomPic">
-    <div class="about__bottomPic__left"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image03.webp" alt="農家"></div>
-    <div class="about__bottomPic__right"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image04.webp" alt="牛"></div>
+    <div class="about__bottomPic__left about__fadeIn time3"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image03.webp" alt="農家"></div>
+    <div class="about__bottomPic__right about__fadeIn time4"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image04.webp" alt="牛"></div>
   </div>
 </div>
 

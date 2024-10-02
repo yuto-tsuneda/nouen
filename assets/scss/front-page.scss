@@ -71,6 +71,34 @@ body{
         width: 20%;
       }
     }
+
+    .about__fadeIn {
+      opacity: 0;
+      transform: translateY(20px);  /* 初期状態で20px下に */
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  .about__fadeIn.show.time1 {
+      opacity: 1;
+      transform: translateY(0);  /* 元の位置に戻す */
+  }
+
+  .about__fadeIn.show.time2{
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.5s;
+  }
+
+  .about__fadeIn.show.time3{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.0s;
+}
+
+.about__fadeIn.show.time4{
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.5s;
+}
   }
 
   .project{
