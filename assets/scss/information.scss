@@ -1,0 +1,140 @@
+$main_color:#93c572;
+$sub_color:#f7b560;
+$txt_color:#555555;
+$bg_color:#f9f9f9;
+
+body{
+  color: $txt_color;
+  background-color: $bg_color;
+  
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.top{
+  background-image: none;
+  height: auto;
+}
+
+@media screen and (min-width: 901px){
+
+  .information{
+    width: 960px;
+    margin: 0 auto 100px;
+
+    h2{
+      font-size: 40px;
+      background-image: url(../images/title-line.webp);
+      background-position: 0 100%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: fit-content;
+      padding-top: 80px;
+    }
+  }
+
+  .tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    margin: 30px auto 0;
+    font-size: 20px;
+  }
+  
+  .tab-link {
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    width: 190px;
+    text-align: center;
+    color: $sub_color;
+    box-shadow: 0px 3px 6px #00000029;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .tab-link.active {
+    background-color: $main_color;
+    color: white;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+    background-color: #FFF;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 100px;
+    padding: 80px 40px;
+    margin-top: 50px;
+  }
+
+  
+  .news-item{
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .news-left{
+    width: 25%;
+
+    img{
+      border-radius: 20px;
+      box-shadow: 0px 3px 6px #00000029;
+    }
+  }
+
+  .news-right{
+    width: 75%;
+    margin-left: 40px;
+
+    .news-date{
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .news-category{
+      background-color: $main_color;
+      color: #fff;
+      padding: 10px 15px;
+      display: inline;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .news-title{
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .news-excerpt{
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+
+  .page-numbers{
+    border: 1px solid $main_color;
+    color: $main_color;
+    padding: 15px 15px;
+    background-color: $bg_color;
+    border-radius: 5px;
+  }
+
+  .pagination{
+    text-align: center;
+  }
+
+}

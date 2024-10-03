@@ -4,6 +4,20 @@ $txt_color:#555555;
 $bg_color:#f9f9f9;
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 
+body{
+  color: $txt_color;
+  background-color: $bg_color;
+  
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 @media screen and (min-width: 901px){
   .top{
     background-image: url(../images/FV.webp);
@@ -233,4 +247,14 @@ $bg_color:#f9f9f9;
     }
   }
 
+  .bled{
+    width: 960px;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+}
+
+.separator{
+  color: $main_color;
+  font-size: 25px;
 }

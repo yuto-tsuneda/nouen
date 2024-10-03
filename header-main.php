@@ -22,7 +22,7 @@
         <li><a href="#">私たちについて</a></li>
         <li><a href="#">活動紹介</a></li>
         <li><a href="#">よくあるご質問</a></li>
-        <li><a href="#">お知らせ</a></li>
+        <li><a href="<?php echo esc_url(home_url('/information/')); ?>">お知らせ</a></li>
         <li><a href="#">アクセス</a></li>
         <li><a href="#">お問い合わせ</a></li>
       </ul>
