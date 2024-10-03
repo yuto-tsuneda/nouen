@@ -156,20 +156,24 @@ function load_posts_ajax_handler() {
       $pagination = paginate_links(array(
           'total' => $posts->max_num_pages,
           'current' => $paged,
-          'format' => '?paged=%#%',
+          'format' => '?page=%#%',
           'type' => 'array',
+          'prev_text' => '<',
+          'next_text' => '>',
       ));
 
       if ($pagination) {
           $response['pagination'] = '<div class="pagination">';
           foreach ($pagination as $link) {
-              if (preg_match('/paged=(\d+)/', $link, $matches)) {
-                  $page_number = $matches[1];
-                  $response['pagination'] .= '<a href="#" class="pagination-link" data-page="' . $page_number . '">' . $page_number . '</a>';
-              } else {
-                  $response['pagination'] .= '<span class="pagination-current">' . strip_tags($link) . '</span>';
-              }
-          }
+            if (strpos($link, 'class="current"') !== false) {
+                $response['pagination'] .= '<span class="pagination-current">' . strip_tags($link) . '</span>';
+            } else {
+                // aタグの中からhref属性を削除しつつページ番号を正しくリンクに反映
+                $page_number = preg_replace('/[^0-9]/', '', strip_tags($link));
+                $response['pagination'] .= '<a href="#" class="pagination-link" data-page="' . $page_number . '">' . $page_number . '</a>';
+            }
+        }
+        
           $response['pagination'] .= '</div>';
       }
 
