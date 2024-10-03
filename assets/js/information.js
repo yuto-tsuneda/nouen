@@ -4,47 +4,52 @@ jQuery(document).ready(function($) {
   function loadPosts(category = 'all', page = 1) {
       console.log("Loading posts for category: " + category + " at page: " + page); // デバッグ用ログ
       $.ajax({
-        url: ajaxurl, 
-        type: 'POST',
-        data: {
-            action: 'load_posts',
-            category: category,
-            page: page
-        },
-        success: function(response) {
-            console.log(response); // レスポンスデータをログで確認
-            $('#post-container').html(response.posts); 
-            $('#pagination').html(response.pagination); 
-    
-            // ページネーションクリックイベントを再バインド
-            bindPaginationLinks(); 
-        },
-        error: function(xhr, status, error) {
-            console.log("Error: " + error); 
-        }
-    });
-    
+          url: ajaxurl, 
+          type: 'POST',
+          data: {
+              action: 'load_posts',
+              category: category,
+              page: page
+          },
+          success: function(response) {
+              console.log(response); // レスポンスデータをログで確認
+              $('#post-container').html(response.posts); 
+              $('#pagination').html(response.pagination); 
+
+              // ページネーションクリックイベントを再バインド
+              bindPaginationLinks(); 
+          },
+          error: function(xhr, status, error) {
+              console.log("Error: " + error); 
+          }
+      });
   }
 
   // ページネーションリンクにクリックイベントをバインドする関数
   function bindPaginationLinks() {
-    $('.pagination-link').off('click').on('click', function(e) {
-        e.preventDefault(); // リンクのデフォルト動作を無効化
-        const page = $(this).data('page'); // クリックしたページ番号を取得
-        console.log("Pagination clicked: " + page); // デバッグ用ログ
-        loadPosts(activeCategory, page); // 投稿を再読み込み
-    });
+      $('.pagination-link').off('click').on('click', function(e) {
+          e.preventDefault(); // リンクのデフォルト動作を無効化
+          const page = $(this).data('page');
+          console.log("Pagination clicked: " + page); // デバッグ用ログ
+          loadPosts(activeCategory, page);
+      });
 
-    // 前へ、次へのリンクもバインドする
-    $('.pagination-prev, .pagination-next').off('click').on('click', function(e) {
-        e.preventDefault();
-        const direction = $(this).hasClass('pagination-prev') ? -1 : 1; // 前へか次へかを判別
-        const newPage = activePage + direction; // 現在のページから方向に応じたページを計算
-        if (newPage > 0 && newPage <= totalPages) { // ページの範囲内であることを確認
-            loadPosts(activeCategory, newPage); // 投稿を読み込み
-        }
-    });
-}
+      // 戻るボタンのクリックイベント
+      $('.pagination-prev').off('click').on('click', function(e) {
+          e.preventDefault();
+          const page = $(this).data('page');
+          console.log("Previous page clicked: " + page); // デバッグ用ログ
+          loadPosts(activeCategory, page);
+      });
+
+      // 次ボタンのクリックイベント
+      $('.pagination-next').off('click').on('click', function(e) {
+          e.preventDefault();
+          const page = $(this).data('page');
+          console.log("Next page clicked: " + page); // デバッグ用ログ
+          loadPosts(activeCategory, page);
+      });
+  }
 
   // 初回読み込み
   loadPosts();
@@ -58,5 +63,3 @@ jQuery(document).ready(function($) {
       loadPosts(activeCategory, 1); // タブをクリックしたら1ページ目にリセット
   });
 });
-
-

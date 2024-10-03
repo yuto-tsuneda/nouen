@@ -133,10 +133,10 @@ function load_posts_ajax_handler() {
 
           // アイキャッチ画像を追加
           if (has_post_thumbnail()) {
-              $response['posts'] .= '<div class="post__item__left">' . get_the_post_thumbnail(get_the_ID(), 'thumbnail'); // サムネイルサイズでアイキャッチを表示
+              $response['posts'] .= '<div class="post__item__left"><a href="' .get_permalink() .'">' . get_the_post_thumbnail(get_the_ID(), 'thumbnail') . "</a>"; // サムネイルサイズでアイキャッチを表示
           } else {
               // アイキャッチ画像がない場合のデフォルト画像
-              $response['posts'] .= '<div class="post__item__left">' . '<img src="' . get_template_directory_uri() . '/assets/images/no-image.webp" alt="デフォルト画像" />'; // 適切なデフォルト画像のパスを指定
+              $response['posts'] .= '<div class="post__item__left"><a href="' .get_permalink() .'">' . '<img src="' . get_template_directory_uri() . '/assets/images/no-image.webp" alt="デフォルト画像" /></a>';  // 適切なデフォルト画像のパスを指定
           }
           $response['posts'] .= '</div>'; 
           $response['posts'] .= '<div class="post__item__right">'; 
@@ -145,37 +145,39 @@ function load_posts_ajax_handler() {
           // カテゴリー
           $response['posts'] .= '<span class="post__item__category">' . get_the_category_list(', ') . '</span>'; 
           // タイトル
-          $response['posts'] .= '<h2 class="post__item__title">' . get_the_title() . '</h2>'; 
+          $response['posts'] .= '<h2 class="post__item__title"><a href=" '.get_permalink() .'">' . get_the_title() . '</a></h2>'; 
           // 本文（抜粋）
-          $response['posts'] .= '<p class="post__item__excerpt">' . get_the_excerpt() . '</p>'; 
+          $response['posts'] .= '<p class="post__item__excerpt"><a href="' .get_permalink() .'">' . get_the_excerpt() . '</a></p>'; 
           $response['posts'] .= '</div>'; 
           $response['posts'] .= '</div>';
       endwhile;
 
-      // ページネーションを生成
-      $pagination = paginate_links(array(
-          'total' => $posts->max_num_pages,
-          'current' => $paged,
-          'format' => '?page=%#%',
-          'type' => 'array',
-          'prev_text' => '<',
-          'next_text' => '>',
-      ));
+      // ページネーションの生成部分
+      $pagination_html = '<div class="pagination">';
 
-      if ($pagination) {
-          $response['pagination'] = '<div class="pagination">';
-          foreach ($pagination as $link) {
-            if (strpos($link, 'class="current"') !== false) {
-                $response['pagination'] .= '<span class="pagination-current">' . strip_tags($link) . '</span>';
-            } else {
-                // aタグの中からhref属性を削除しつつページ番号を正しくリンクに反映
-                $page_number = preg_replace('/[^0-9]/', '', strip_tags($link));
-                $response['pagination'] .= '<a href="#" class="pagination-link" data-page="' . $page_number . '">' . $page_number . '</a>';
-            }
-        }
-        
-          $response['pagination'] .= '</div>';
+      // 前のページがある場合のみ「戻る」を表示
+      if ($paged > 1) {
+          $pagination_html .= '<a href="#" class="pagination-prev" data-page="' . ($paged - 1) . '">« 前</a>';
       }
+
+      // ページ番号を表示
+      for ($i = 1; $i <= $posts->max_num_pages; $i++) {
+          if ($i === $paged) {
+              $pagination_html .= '<span class="pagination-current">' . $i . '</span>'; // 現在のページ
+          } else {
+              $pagination_html .= '<a href="#" class="pagination-link" data-page="' . $i . '">' . $i . '</a>'; // 他のページ
+          }
+      }
+
+      // 次のページがある場合のみ「次」を表示
+      if ($paged < $posts->max_num_pages) {
+          $pagination_html .= '<a href="#" class="pagination-next" data-page="' . ($paged + 1) . '">次 »</a>';
+      }
+
+      $pagination_html .= '</div>';
+
+      // 新しいページネーションをレスポンスに設定
+      $response['pagination'] = $pagination_html;
 
       wp_reset_postdata();
   }
