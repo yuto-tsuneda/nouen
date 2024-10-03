@@ -1,55 +1,37 @@
 jQuery(document).ready(function($) {
-  var currentPage = {
-    'all': 1,
-    'category1': 1,
-    'category2': 1,
-    'category3': 1
-  };
+  let activeCategory = 'all'; // 初期は「すべて」のタブをアクティブに
 
-  function loadTabContent(tabId) {
-    var category = $('.tab-link.active').data('category');
-    var page = currentPage[category];
-
-    $.ajax({
-      url: ajax_object.ajax_url, // AJAX URL
-      type: 'POST',
-      data: {
-        action: 'load_news_list',
-        category: category,
-        page: page
-      },
-      success: function(data) {
-        $('#' + tabId).html(data);
-      }
-    });
+  function loadPosts(category = 'all', page = 1) {
+      $.ajax({
+          url: ajaxurl, // WordPressのAjax URL（functions.phpで設定）
+          type: 'POST',
+          data: {
+              action: 'load_posts', // WordPressのAjaxアクション
+              category: category,
+              page: page
+          },
+          success: function(response) {
+              $('#post-container').html(response.posts); // 記事一覧を更新
+              $('#pagination').html(response.pagination); // ページネーションを更新
+          }
+      });
   }
 
-  $('.tab-link').click(function() {
-    var tab_id = $(this).attr('data-tab');
+  // 初回読み込み（すべてのカテゴリー）
+  loadPosts();
 
-    // すべてのタブリンクとコンテンツを非アクティブ化
-    $('.tab-link').removeClass('active');
-    $('.tab-content').removeClass('active');
-
-    // クリックされたタブリンクと対応するコンテンツをアクティブ化
-    $(this).addClass('active');
-    $('#' + tab_id).addClass('active');
-
-    // 現在のページをリセット
-    var category = $(this).data('category');
-    currentPage[category] = 1; // 現在のページを1にリセット
-
-    // タブコンテンツをロード
-    loadTabContent(tab_id);
+  // タブクリックイベント
+  $('.tab-link').on('click', function() {
+      activeCategory = $(this).data('category'); // クリックされたタブのカテゴリーを取得
+      $('.tab-link').removeClass('active'); // すべてのタブからactiveクラスを削除
+      $(this).addClass('active'); // クリックされたタブにactiveクラスを追加
+      loadPosts(activeCategory, 1); // タブをクリックしたら1ページ目にリセット
   });
 
-  $(document).on('click', '.pagination a', function(e) {
-    e.preventDefault();
-    var category = $('.tab-link.active').data('category');
-    var page = $(this).attr('data-page'); // データ属性からページ番号を取得
-    currentPage[category] = page; // 現在のページを更新
-
-    // タブコンテンツを再ロード
-    loadTabContent($('.tab-link.active').data('tab'));
+  // ページネーションクリックイベント
+  $(document).on('click', '.pagination-link', function(e) {
+      e.preventDefault(); // リンクのデフォルト動作を無効化
+      const page = $(this).data('page'); // ページ番号を取得
+      loadPosts(activeCategory, page); // アクティブなカテゴリーとページ番号を使用して記事を読み込む
   });
 });
