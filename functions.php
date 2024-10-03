@@ -104,62 +104,72 @@ function display_recent_posts_with_limit($num_posts = 3) {
   return $output;  // 関数の戻り値としてHTMLを返す
 }
 
+function set_default_thumbnail_image ( $html ) {
+  if ( "" === $html ) {
+    $html = '<img src="' . get_template_directory_uri() . '/assets/images/no-image.webp" alt="デフォルトのアイキャッチ画像" />';
+  }
+  return $html;
+}
 
-function display_news_list($category_slug = null) {
-  // WP_Query to get all posts
-  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
+function display_news_list($category_slug = null, $paged = 1) {
+  // WP_Queryで投稿を取得
   $args = array(
       'post_type' => 'post',
       'posts_per_page' => 10, // 表示する投稿数
       'orderby' => 'date',
       'order' => 'DESC',
-      'paged' => $paged, // ページ番号を指定
+      'paged' => $paged,
   );
 
   if ($category_slug) {
-    $args['tax_query'] = array(
-        array(
-            'taxonomy' => 'category',
-            'field'    => 'slug',
-            'terms'    => $category_slug,
-        ),
-    );
-}
+      $args['tax_query'] = array(
+          array(
+              'taxonomy' => 'category',
+              'field'    => 'slug',
+              'terms'    => $category_slug,
+          ),
+      );
+  }
 
-  $query = new WP_Query( $args );
+  $query = new WP_Query($args);
   ob_start(); // バッファリング開始
-  if ( $query->have_posts() ) :
+  if ($query->have_posts()) :
       ?>
       <div id="news-list">
-          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+          <?php while ($query->have_posts()) : $query->the_post(); ?>
               <div class="news-item" data-id="<?php the_ID(); ?>">
-                <div class="news-left">
-                  <div class="news-thumbnail"><?php the_post_thumbnail( 'thumbnail' ); ?></div>
-                </div>
-                <div class="news-right">
-                  <div class="news-date"><?php echo get_the_date('Y.m.d'); ?></div>
-                  <div class="news-category"><?php the_category(', '); ?></div>
-                  <div class="news-title"><?php the_title(); ?></div>
-                  <div class="news-excerpt"><?php the_excerpt(); ?></div>
-                </div>
+                  <div class="news-left">
+                      <div class="news-thumbnail"><?php the_post_thumbnail('thumbnail'); ?></div>
+                  </div>
+                  <div class="news-right">
+                      <div class="news-date"><?php echo get_the_date('Y.m.d'); ?></div>
+                      <div class="news-category"><?php the_category(', '); ?></div>
+                      <div class="news-title"><?php the_title(); ?></div>
+                      <div class="news-excerpt"><?php the_excerpt(); ?></div>
+                  </div>
               </div>
           <?php endwhile; ?>
       </div>
 
       <div class="pagination">
-            <?php
-            // ページネーションリンクを表示
-            echo paginate_links(array(
-                'total' => $query->max_num_pages, // 総ページ数を指定
-                'current' => max(1, get_query_var('paged')), // 現在のページ番号
-                'format' => '?paged=%#%', // ページリンクのフォーマット
-                'prev_text' => __('＜'), // 「前へ」リンクのテキスト
-                'next_text' => __('＞'), // 「次へ」リンクのテキスト
-            ));
-            ?>
-        </div>
+    <?php
+    $pagination_links = paginate_links(array(
+        'total' => $query->max_num_pages,
+        'current' => max(1, get_query_var('paged')),
+        'format' => '?paged=%#%',
+        'prev_text' => __('＜'),
+        'next_text' => __('＞'),
+        'type' => 'array', // 配列で取得
+    ));
 
+    if ($pagination_links) {
+        foreach ($pagination_links as $link) {
+            // data-page 属性を追加
+            echo '<span class="page-link">' . str_replace('href=', 'data-page=', $link) . '</span>';
+        }
+    }
+    ?>
+</div>
 
       <?php
       wp_reset_postdata();
@@ -167,11 +177,15 @@ function display_news_list($category_slug = null) {
   return ob_get_clean(); // バッファリングを終了し、出力を返す
 }
 
-function set_default_thumbnail_image ( $html ) {
-  if ( "" === $html ) {
-    $html = '<img src="' . get_template_directory_uri() . '/assets/images/no-image.webp" alt="デフォルトのアイキャッチ画像" />';
-  }
-  return $html;
-}
-add_filter( 'post_thumbnail_html', 'set_default_thumbnail_image' );
+add_filter('post_thumbnail_html', 'set_default_thumbnail_image');
 
+add_action('wp_ajax_load_news_list', 'ajax_load_news_list');
+add_action('wp_ajax_nopriv_load_news_list', 'ajax_load_news_list');
+
+function ajax_load_news_list() {
+  $category_slug = isset($_POST['category']) && $_POST['category'] !== 'all' ? $_POST['category'] : null;
+  $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+
+  echo display_news_list($category_slug, $paged);
+  wp_die(); // AJAXリクエストが成功したら終了
+}
