@@ -8,11 +8,11 @@
     <div class="footer__right">
       <div class="footer__right__nav">
         <ul>
-          <li>ホーム</li>
+          <li><a href="<?php echo home_url(); ?>">ホーム</a></li>
           <li>私たちについて</li>
           <li>活動紹介</li>
           <li>よくあるご質問</li>
-          <li>お知らせ</li>
+          <li><a href="<?php echo esc_url(home_url('/information/')); ?>">お知らせ</a></li>
           <li>アクセス</li>
         </ul>
       </div>

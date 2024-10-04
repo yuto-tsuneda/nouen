@@ -18,7 +18,7 @@
 
 <div class="top">
     <div class="pcHeader">
-    <h1><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></a></h1>
+    <h1><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></a></h1>
       <ul>
         <li><a href="#">私たちについて</a></li>
         <li><a href="#">活動紹介</a></li>

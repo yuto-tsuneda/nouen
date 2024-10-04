@@ -17,9 +17,9 @@ function theme_enqueue_scripts() {
     wp_enqueue_script( 'front-script', $theme_directory . '/assets/js/front-page.js', array('common-script'), null, true);
   }
 
-  if(is_singular('news') || is_post_type_archive('news')){
-    wp_enqueue_style('news-style', $theme_directory . '/css/archive-news.css', array('common-style'));
-    wp_enqueue_script('news-script', $theme_directory . '/js/news.js', array('jquery'), null, true);
+  if(is_single()){
+    wp_enqueue_style('single-style', $theme_directory . '/assets/css/single.css', array('common-style'));
+    wp_enqueue_script('single-script', $theme_directory . '/assets/js/single.js', array('jquery'), null, true);
   }
 
   if(is_post_type_archive('product')){
@@ -133,7 +133,7 @@ function load_posts_ajax_handler() {
 
           // アイキャッチ画像を追加
           if (has_post_thumbnail()) {
-              $response['posts'] .= '<div class="post__item__left"><a href="' .get_permalink() .'">' . get_the_post_thumbnail(get_the_ID(), 'thumbnail') . "</a>"; // サムネイルサイズでアイキャッチを表示
+              $response['posts'] .= '<div class="post__item__left"><a href="' .get_permalink() .'">' . get_the_post_thumbnail(get_the_ID(), 'full') . "</a>"; // サムネイルサイズでアイキャッチを表示
           } else {
               // アイキャッチ画像がない場合のデフォルト画像
               $response['posts'] .= '<div class="post__item__left"><a href="' .get_permalink() .'">' . '<img src="' . get_template_directory_uri() . '/assets/images/no-image.webp" alt="デフォルト画像" /></a>';  // 適切なデフォルト画像のパスを指定
@@ -157,7 +157,7 @@ function load_posts_ajax_handler() {
 
       // 前のページがある場合のみ「戻る」を表示
       if ($paged > 1) {
-          $pagination_html .= '<a href="#" class="pagination-prev" data-page="' . ($paged - 1) . '">« 前</a>';
+          $pagination_html .= '<a href="#" class="pagination-prev" data-page="' . ($paged - 1) . '"><</a>';
       }
 
       // ページ番号を表示
@@ -171,7 +171,7 @@ function load_posts_ajax_handler() {
 
       // 次のページがある場合のみ「次」を表示
       if ($paged < $posts->max_num_pages) {
-          $pagination_html .= '<a href="#" class="pagination-next" data-page="' . ($paged + 1) . '">次 »</a>';
+          $pagination_html .= '<a href="#" class="pagination-next" data-page="' . ($paged + 1) . '"> ></a>';
       }
 
       $pagination_html .= '</div>';
@@ -201,3 +201,20 @@ function enqueue_my_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
 
 // お知らせ一覧ページ
+
+function my_custom_category_list() {
+  $categories = get_the_category();
+  if ( ! empty( $categories ) ) {
+      $category_list = array();
+      foreach ( $categories as $category ) {
+          $category_list[] = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+      }
+      echo implode( ', ', $category_list );
+  }
+}
+
+
+function setup_theme() {
+  add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'setup_theme');

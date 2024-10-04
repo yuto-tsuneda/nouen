@@ -259,6 +259,7 @@ body a {
     width: 960px;
     margin: 10px auto;
     font-size: 14px;
+    list-style: none;
   }
 }
 .separator {
