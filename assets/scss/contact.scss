@@ -1,0 +1,127 @@
+$main_color:#93c572;
+$sub_color:#f7b560;
+$txt_color:#555555;
+$bg_color:#f9f9f9;
+
+body{
+  color: $txt_color;
+  background-color: $bg_color;
+  
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.top{
+  background-image: none;
+  height: auto;
+}
+
+@media screen and (min-width: 901px){
+
+  .content{
+    width: 960px;
+    margin: 0 auto;
+
+    h2{font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: fit-content;
+    padding-top: 80px;
+    }
+
+    &__bg{
+      background-color: #fff;
+      padding: 100px 50px;
+      border-radius: 100px;
+      margin: 50px 0;
+    }
+  }
+
+  .cf7{
+
+    width: 60%;
+    margin: 0 auto;
+
+    &__drop{
+
+      margin-bottom: 30px;
+
+      &__green{
+        background-color: $main_color;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 2px 3px;
+        font-weight: lighter;
+        margin-left: 10px;
+      }
+    }
+
+    &__name{
+      margin-bottom: 30px;
+    }
+
+    &__tel{
+      margin-bottom: 30px;
+    }
+
+    &__mail{
+      margin-bottom: 30px;
+    }
+
+    p{
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__check{
+      display: inline;
+      text-align: center;
+    }
+
+    &__button{
+      display: inline;
+      text-align: center;
+    }
+  }
+
+  .wpcf7-select{
+    width: 80%;
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  .wpcf7-form-control{
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  input.wpcf7-submit{
+    background-color: #fff;
+    border: 2px solid $main_color;
+    margin: 30px auto;
+    display: inline-block;
+    border-radius: 100px;
+    color: $main_color;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .wpcf7-text{
+    width: 90%;
+  }
+
+  .wpcf7-textarea{
+    width: 90%;
+  }
+}

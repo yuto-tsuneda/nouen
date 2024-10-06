@@ -22,14 +22,14 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('single-script', $theme_directory . '/assets/js/single.js', array('jquery'), null, true);
   }
 
-  if(is_post_type_archive('product')){
-    wp_enqueue_style('product-style', $theme_directory . '/css/archive-product.css', array('common-style'));
-    wp_enqueue_script('product-script', $theme_directory . '/js/product.js', array('jquery'), null, true);
+  if(is_page('contactthanks')){
+    wp_enqueue_style('contactthanks-style', $theme_directory . '/assets/css/contactthanks.css', array('common-style'));
+    wp_enqueue_script('contactthanks-script', $theme_directory . '/assets/js/contact.js', array('jquery'), null, true);
   }
 
-  if(is_singular('product')){
-    wp_enqueue_style('product-single-style', $theme_directory . '/css/product.css', array('common-style'));
-    wp_enqueue_script('product-single-script', $theme_directory . '/js/product.css', array('jquery'), null, true);
+  if(is_page('contactcheck')){
+    wp_enqueue_style('contactcheck-single-style', $theme_directory . '/assets/css/contactcheck.css', array('common-style'));
+    wp_enqueue_script('contactcheck-script', $theme_directory . '/assets/js/contact.css', array('jquery'), null, true);
   }
 
   if(is_404()){
@@ -42,9 +42,9 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('thankspage-script', $theme_directory. '/assets/js/information.js', array('jquery'), null, true);
   }
 
-  if(is_page('contactcf7')){
-    wp_enqueue_style('contactcf7-style', $theme_directory. '/css/contactcf7.css', array('common-style'));
-    wp_enqueue_script('contactcf7-script', $theme_directory. '/js/contactcf7.js', array('jquery'), null, true);
+  if(is_page('contact')){
+    wp_enqueue_style('contactcf7-style', $theme_directory. '/assets/css/contact.css', array('common-style'));
+    wp_enqueue_script('contactcf7-script', $theme_directory. '/assets/js/contact.js', array('jquery'), null, true);
   }
 }
 
@@ -218,3 +218,18 @@ function setup_theme() {
   add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'setup_theme');
+
+
+
+function custom_wpcf7_validation_error_email($result, $tag)
+{
+    if ('your-email' == $tag->name) {
+        if (empty($_POST[$tag->name])) {
+            $result->invalidate($tag, '正しいメールアドレスを入力してください。');
+        }
+    }
+        return $result;
+}
+add_filter('wpcf7_validate_email', 'custom_wpcf7_validation_error_email', 10, 2);
+
+
