@@ -7,12 +7,13 @@
     <div class="about__topPic__bottom about__fadeIn time2"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image02.webp" alt="トマト"></div>
   </div>
   <div class="about__topDescription">
+  <div class="about__topDescription__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></div>
     <p>自然の恵み農園は、<br>
-      自然の恵みと動物の尊さが調和する特別な場所です。<br>
-      新鮮で美味しい農産物を栽培し、心温まる動物たちと触れ合える場所でもあります。<br>
+      自然の恵みと動物の尊さが調和する<br class="display__sp">特別な場所です。<br>
+      新鮮で美味しい農産物を栽培し、<br class="display__sp">心温まる動物たちと触れ合える場所<br class="display__sp">でもあります。<br>
     </p>
     <p>
-      自然の恵みを受け、動物たちとの特別なひとときを楽しんでいただける場所として、<br>
+      自然の恵みを受け、<br class="display__sp">動物たちとの特別なひとときを<br class="display__sp">楽しんでいただける場所として、<br>
       私たちは誇りを持って活動をしています。<br>
       一緒に自然と動物の美しさを共有しましょう。<br>
     </p>
@@ -81,6 +82,7 @@
 
   <div class="accordion">
   <div class="questionTitle">
+  <p class="display__sp questionTitle__sp__q">Q</p>
     <h3><span class="questionTitle__q">Q</span>農園の野菜や果物は有機栽培ですか？</h3>
     <button class="toggle"><span class="icon">+</span></button>
   </div>
@@ -93,6 +95,7 @@
 
 <div class="accordion">
   <div class="questionTitle">
+  <p class="display__sp questionTitle__sp__q">Q</p>
     <h3><span class="questionTitle__q">Q</span>農園での見学や体験ツアーは行っていますか？</h3>
     <button class="toggle"><span class="icon">+</span></button>
   </div>
@@ -105,6 +108,7 @@
 
 <div class="accordion">
   <div class="questionTitle">
+    <p class="display__sp questionTitle__sp__q">Q</p>
     <h3><span class="questionTitle__q">Q</span>オンラインで注文した農産物はどのように配送されますか？</h3>
     <button class="toggle"><span class="icon">+</span></button>
   </div>
@@ -117,6 +121,7 @@
 
   <div class="accordion">
   <div class="questionTitle">
+  <p class="display__sp questionTitle__sp__q">Q</p>
     <h3><span class="questionTitle__q">Q</span>農園で提供される季節ごとの野菜や果物の品種は何ですか？</h3>
     <button class="toggle"><span class="icon">+</span></button>
   </div>
@@ -133,11 +138,12 @@
     <h2>お知らせ</h2>
     <p>季節の農作物のお知らせ、見学ツアーのご案内、<br>
     オンライン販売セールのお知らせなど、自然の恵み農園の最新情報をお届けします。</p>
-    <a href="#">View more</a>
+    <a class="notice__displayPc"  href="#">View more</a>
   </div>
   <div class="notice__right">
     <?php echo display_recent_posts_with_limit(3); ?>
   </div>
+  <div class="display__sp notice__more"><a href="#">View More</a></div>
 </div>
 
 <div class="access">
@@ -150,7 +156,7 @@
       </tr>
       <tr>
         <th>所在地</th>
-        <td>〒123-4567 千葉県〇〇市××町1丁目23-45</td>
+        <td>〒123-4567<br class="display__sp"> 千葉県〇〇市××町<br class="display__sp">1丁目23-45</td>
       </tr>
       <tr>
         <th>電話番号</th>
@@ -167,10 +173,11 @@
           <th>Googleマップ<br>
             <a href="https://maps.app.goo.gl/CHDnqUDc3iJEF3YY8">地図を拡大表示</a>
           </th>
-          <td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6475.37385677559!2d140.060151!3d35.758499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60227fc8bf976e9f%3A0x90dbab8929ab17d!2z5Zm05rC0!5e0!3m2!1sja!2sjp!4v1727875919029!5m2!1sja!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+          <td><iframe class="display__pc" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6475.37385677559!2d140.060151!3d35.758499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60227fc8bf976e9f%3A0x90dbab8929ab17d!2z5Zm05rC0!5e0!3m2!1sja!2sjp!4v1727875919029!5m2!1sja!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
         </tr>
       </table>
     </div>
+    <iframe class="display__sp" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6475.37385677559!2d140.060151!3d35.758499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60227fc8bf976e9f%3A0x90dbab8929ab17d!2z5Zm05rC0!5e0!3m2!1sja!2sjp!4v1727875919029!5m2!1sja!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
@@ -179,8 +186,8 @@
   <p>お仕事のご相談、農園体験、牧場の見学、その他ご質問<br>
   お気軽にお問い合わせください。</p>
   <a href="#">お問い合わせ</a>
-  <p class="contact__bold">問い合わせ番号：<span>123-567-8901</span></p>
-  <p class="contact__bold">【受付時間】10:00 ~ 18:00（土日祝を除く）</p>
+  <p class="contact__bold">問い合わせ番号：<br class="display__sp"><span>123-567-8901</span></p>
+  <p class="contact__bold">【受付時間】<br class="display__sp">10:00 ~ 18:00（土日祝を除く）</p>
 </div>
 
 

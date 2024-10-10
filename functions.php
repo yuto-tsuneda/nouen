@@ -64,7 +64,10 @@ function display_latest_posts() {
       while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
           <div class="post-item">
               <a href="<?php the_permalink(); ?>">
-                <p class="top__inner__day">更新日: <?php echo get_the_modified_date('Y.m.d'); ?></p>
+                <div class="top__inner__flex">
+                <p class="top__inner__h2">NEWS</p>
+                <p class="top__inner__day"><span class="top__inner__day__sp">更新日: </span><?php echo get_the_modified_date('Y.m.d'); ?></p>
+                </div>
                 <h2 class="top__inner__title"><?php the_title(); ?></h2> 
               </a>
           </div>
@@ -87,7 +90,7 @@ function display_recent_posts_with_limit($num_posts = 3) {
       while ($recent_posts->have_posts()) {
           $recent_posts->the_post();
           $output .= '<li class="recent-post-item">';
-          $output .= '<span class="post-date">' . get_the_date('Y,m,d') . '</span>';
+          $output .= '<span class="post-date">' . get_the_date('Y.m.d') . '</span>';
           $output .= '<span class="post-category">' . get_the_category_list(', ') . '</span>';
           $output .= '<br>';
           $output .= '<a class="post-title" href="' . get_permalink() . '">' . get_the_title() . '</a>';

@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footer__left">
       <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.webp" alt="サイトロゴ"></a>
-      <p>〒123-4567<br>千葉県〇〇市××町1丁目23-45</p>
+      <p class="footer__left__sp">〒123-4567<br>千葉県〇〇市××町1丁目23-45</p>
       <p>TEL:123-4567-8910 <br>FAX:12-345-6789</p>
     </div>
     <div class="footer__right">

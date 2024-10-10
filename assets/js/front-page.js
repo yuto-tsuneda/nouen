@@ -12,6 +12,26 @@ jQuery(document).ready(function($) {
   });
 });
 
+
+jQuery(document).ready(function($) {
+  // 初期チェック
+  function checkWindowSize() {
+    if ($(window).width() <= 900) {
+      $('.image-track').removeClass('image-track').addClass('image-track-sp');  // 900px以下で'image-track'を'image-track-sp'に変更
+    } else {
+      $('.image-track-sp').removeClass('image-track-sp').addClass('image-track');  // 900px以上で'image-track-sp'を'image-track'に変更
+    }
+  }
+
+  // ページ読み込み時にクラスを確認
+  checkWindowSize();
+
+  // 画面サイズが変更されたときにクラスを書き換える
+  $(window).resize(function() {
+    checkWindowSize();
+  });
+});
+
 jQuery(document).ready(function($) {
   $('.image-track').slick({
       slidesToShow: 3.5,       // 表示する画像の数
@@ -24,6 +44,23 @@ jQuery(document).ready(function($) {
       dots: false,            // ナビゲーションのドットを表示
   });
 });
+
+jQuery(document).ready(function($) {
+  $('.image-track-sp').slick({
+      slidesToShow: 1.5,       // 表示する画像の数
+      slidesToScroll: 1,     // スクロールする画像の数
+      infinite: true,        // ループさせる
+      autoplay: true,        // 自動でスライド
+      autoplaySpeed: 1500,   // スライド間隔 (ミリ秒)
+      speed: 1000,
+      arrows: false,          // 次へ・前へボタンを表示
+      dots: false,            // ナビゲーションのドットを表示
+  });
+});
+
+
+
+
 
 jQuery(document).ready(function($) {
   $('.toggle').on('click', function() {

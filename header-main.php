@@ -61,10 +61,14 @@
 
 
     <div class="top__inner">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.webp" alt="サイトロゴ">
-      <h2 class="top__inner__subtitle">自然の恵みを感じ、<br class="top__inner__sp">豊かな未来を。</h2>
+      <div class="top__inner__sp">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.webp" alt="サイトロゴ">
+        <h2 class="top__inner__subtitle">自然の恵みを感じ、<br class="top__inner__sp">豊かな未来を。</h2>
+      </div>
       <div class="top__inner__news">
-        <h2>NEWS</h2>
+        <div class="top__inner__news__sp">
+          <h2>NEWS</h2>
+        </div>
         <?php display_latest_posts(); ?>
       </div>
       <div class="top__inner__scroll" id="scroll">
