@@ -46,14 +46,13 @@ body button {
     display: none;
   }
   .top__inner__news {
-    margin-right: 30px;
     width: 337px;
     background-color: #f7b560;
     border-radius: 20px;
     color: #fff;
     padding: 10px;
     position: absolute;
-    right: 0;
+    right: 30px;
     bottom: 30px;
     -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
@@ -451,6 +450,7 @@ body button {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
   }
   .top__inner {
     margin-top: 40vh;
@@ -490,8 +490,9 @@ body button {
     border-radius: 20px;
     color: #fff;
     padding: 10px;
-    margin-top: 50%;
-    margin-left: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
   }
   .top__inner__news__sp {
     display: none;

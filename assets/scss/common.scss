@@ -63,14 +63,13 @@ body{
       }
 
       &__news{
-        margin-right: 30px;
         width: 337px;
         background-color: $sub_color;
         border-radius: 20px;
         color: #fff;
         padding: 10px;
         position: absolute;
-        right: 0;
+        right: 30px;
         bottom: 30px;
         box-shadow: 0px 3px 6px #00000029;
 
@@ -477,6 +476,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 
     &__inner{
 
@@ -515,8 +515,9 @@ body{
         border-radius: 20px;
         color: #fff;
         padding: 10px;
-        margin-top: 50%;
-        margin-left: 15px;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
 
         &__sp{
           display: none;
