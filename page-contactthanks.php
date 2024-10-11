@@ -1,4 +1,4 @@
-<?php get_header('contact'); ?>
+<?php get_header('contact'); ?> 
 
 <div class="content">
 <div class="bled">

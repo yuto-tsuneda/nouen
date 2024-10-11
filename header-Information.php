@@ -28,3 +28,36 @@
         <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
       </ul>
     </div>
+
+    <div class="header__sp">
+      <div class="header__sp--menu">
+        <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/logo.webp" alt="ホームページロゴ"></a>
+        <button class="header__sp--humberger">
+          <span></span>
+          <span></span>
+          <span>MENU</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="navSp">
+      <div class="navSp__list">
+        <ul>
+          <li><a href="<?php echo home_url(); ?>">トップ<span>TOP</span></a></li>
+          <li><a href="#">私たちについて<span>ABOUT</span></a></li>
+          <li><a href="#">活動紹介<span>WORKS</span></a></li>
+          <li><a href="#">よくあるご質問<span>FAQ</span></a></li>
+          <li><a href="<?php echo esc_url('/information/'); ?>">お知らせ<span>NEWS</span></a></li>
+          <li><a href="#">アクセス<span>ACCESS</span></a></li>
+        </ul>
+      </div>
+      <div class="navSp__contact">
+      <p class="navSp__contact__tel">問い合わせ番号</p>
+      <p class="navSp__contact__number">123-567-8901</p>
+      <p class="navSp__contact__ok">【受付時間】</p>
+      <p class="navSp__contact__time">10:00 ~ 18:00（土日祝を除く）</p>
+      <a href="#">お問い合わせ</a>
+      </div>
+    </div>
+
+  </div>

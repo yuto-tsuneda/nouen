@@ -19,6 +19,9 @@ body button {
   .header__sp {
     display: none;
   }
+  .navSp {
+    display: none;
+  }
   .top {
     background-image: url(../images/FV.webp);
     height: 768px;
