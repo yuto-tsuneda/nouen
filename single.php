@@ -20,18 +20,20 @@
     }
     ?>
     </div>
-  <div class="content__top">
-    <h2><?php the_field('h2title1'); ?></h2> 
+      <?php echo generate_toc_from_acf(); ?>
+
+      <div class="content__top">
+    <h2 id="toc-h2title1"><?php the_field('h2title1'); ?></h2>
     <p><?php the_field('h2txtArea1'); ?></p>
-    <h3><?php the_field('h3title'); ?></h3>
+    <h3 id="toc-h3title1"><?php the_field('h3title'); ?></h3>
     <p><?php the_field('h3txtArea'); ?></p>
-  </div>
-    <div class="content__flex">
-      <div class="content__flex__left">
-        <h2><?php the_field('h2title2'); ?></h2>
+</div>
+
+<div class="content__flex">
+    <div class="content__flex__left">
+        <h2 id="toc-h2title2"><?php the_field('h2title2'); ?></h2>
         <p><?php the_field('h2txtArea2'); ?></p>
-      </div>
-    
+    </div>
       <div class="content__flex__right">
       <?php 
 $image = get_field('pic'); // ACFフィールド 'pic' から画像情報を取得
@@ -40,7 +42,12 @@ if( $image ) : ?>
 <?php endif; ?>
     </div>
     </div>
-  </div>
+    <div class="goInformation">
+      <a href="<?php echo esc_url(home_url('/information/'))?>">一覧に戻る</a>
+    </div>
+</div>
+
+    
 
   <div class="contact">
   <h2>お問い合わせ</h2>

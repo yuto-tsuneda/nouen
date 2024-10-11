@@ -236,3 +236,48 @@ function custom_wpcf7_validation_error_email($result, $tag)
 add_filter('wpcf7_validate_email', 'custom_wpcf7_validation_error_email', 10, 2);
 
 
+
+
+// ↓目次機能↓
+
+function generate_toc_from_acf() {
+  $toc = '';
+  $h2_fields = [
+      get_field('h2title1'),
+      get_field('h2title2')
+  ];
+  $h3_fields = [
+      get_field('h3title'),
+      // 追加の h3 フィールドがある場合はここに記述
+  ];
+
+  // 目次のリストを作成
+  if (!empty($h2_fields)) {
+      $toc .= '<div class="toc"><h2>目次</h2><ul>';
+
+      // h2 タイトルのループ
+      foreach ($h2_fields as $index => $h2) {
+          if ($h2) {
+              // h2 用の ID を設定
+              $toc .= '<li class="toc-level-2"><a href="#toc-h2title' . ($index + 1) . '"><span class="toc-number">' . ($index + 1) . '.</span> ' . esc_html($h2) . '</a>';
+
+              // 対応する h3 タイトルがある場合
+              if (isset($h3_fields[$index]) && $h3_fields[$index]) {
+                  $toc .= '<ul>';
+                  // h3 用の ID を設定
+                  $toc .= '<li class="toc-level-3"><a href="#toc-h3title' . ($index + 1) . '"><span class="toc-dot">・</span> ' . esc_html($h3_fields[$index]) . '</a></li>';
+                  $toc .= '</ul>';
+              }
+
+              $toc .= '</li>';
+          }
+      }
+
+      $toc .= '</ul></div>';
+  }
+
+  return $toc;
+}
+
+
+

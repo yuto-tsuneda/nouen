@@ -63,11 +63,14 @@ body{
     }
 
     &__img{
+
       img{
       margin: 0 auto 50px;
+      box-shadow: 0px 3px 6px #00000029;
+      border-radius: 40px;
     }
   }
-
+  &__top{
     h2{
       border-bottom: 1px solid $main_color;
       display: inline-block;
@@ -83,6 +86,7 @@ body{
       padding-left: 10px;
       margin-bottom: 30px;
     }
+  }
 
     &__flex{
       display: flex;
@@ -91,6 +95,9 @@ body{
 
       &__right{
         width: 50%;
+        img{
+          width: 100%;
+        }
 
         img{
           margin-top: 100px;
@@ -99,6 +106,14 @@ body{
 
       &__left{
         width: 50%;
+        h2{
+          border-bottom: 1px solid $main_color;
+          display: inline-block;
+          padding-right: 30px;
+          margin-bottom: 30px;
+          margin-top: 50px;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -149,4 +164,259 @@ body{
     }
   }
 
+  .toc{
+    width: 60%;
+    margin: 20px auto;
+    border: 2px solid $main_color;
+    border-radius: 20px;
+    padding: 15px 0;
+
+    h2{
+      font-size: 20px;
+      width: 90%;
+      margin: 0 auto 15px;
+    }
+
+    ul{
+      width: 80%;
+      margin: 0 auto;
+      padding-left: 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    &-number{
+      color: $sub_color;
+    }
+
+    &-level-3{
+      margin-bottom: 10px;
+    }
+
+    &-dot{
+      color:$main_color ;
+    }
+  }
+
+  .goInformation{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+
+    a{
+      width: 50%;
+      margin: 0 auto;
+      padding: 20px 0;
+      background-color: #fff;
+      border-radius: 100px;
+      border: 2px solid $main_color;
+      color: #93c572;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+}
+
+@media screen and (max-width:900px){
+  .bled{
+    font-size: 14px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .contentDate{
+    width: 95%;
+    margin: 30px auto 20px;
+
+    &__title{
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__category{
+      background-color: $main_color;
+      color: #fff;
+      margin-left: 10px;
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+  }
+
+  .content{
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 30px 0;
+    border-radius: 50px;
+
+    &__img{
+      img{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 40px;
+      }
+    }
+
+    &__top{
+      width: 90%;
+      margin: 0 auto;
+
+      h2{
+        font-size: 20px;
+        border-bottom: 1px solid $main_color;
+        display: inline-block;
+        padding-right: 20px;
+        margin-bottom: 20px;
+      }
+
+      h3{
+        margin: 0 0 20px;
+        border-left: 10px solid $main_color;
+        padding-left: 10px;
+      }
+
+      p{
+        margin-bottom: 100px;
+      }
+    }
+
+    &__flex{
+      width: 90%;
+      margin: 0 auto;
+
+      h2{
+        font-size: 20px;
+        border-bottom: 1px solid $main_color;
+        display: inline-block;
+        padding-right: 20px;
+        margin-bottom: 20px;
+      }
+
+      h3{
+        margin: 0 0 20px;
+        border-left: 10px solid $main_color;
+        padding-left: 10px;
+      }
+
+      p{
+        margin-bottom: 100px;
+      }
+
+      &__right{
+        img{
+          width: 90%;
+          margin: 0 auto;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  .toc{
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid $main_color;
+    border-radius: 20px;
+    padding: 15px 0;
+
+    h2{
+      font-size: 20px;
+      width: 90%;
+      margin: 0 auto 15px;
+    }
+
+    ul{
+      width: 90%;
+      margin: 0 auto;
+      padding-left: 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    &-number{
+      color: $sub_color;
+    }
+
+    &-level-3{
+      margin-bottom: 10px;
+    }
+
+    &-dot{
+      color:$main_color ;
+    }
+  }
+
+  .goInformation{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+
+    a{
+      width: 50%;
+      margin: 0 auto;
+      padding: 20px 0;
+      background-color: #fff;
+      border-radius: 100px;
+      border: 2px solid $main_color;
+      color: #93c572;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .contact{
+
+    background-color: $sub_color;
+    border-radius: 50px;
+    color: #fff;
+    width: 95%;
+    text-align: center;
+    margin: 90px auto;
+    padding-bottom: 30px;
+    box-shadow: 0px 3px 6px #00000029;
+  
+    h2{
+      font-size: 30px;
+      padding: 40px 0 30px;
+    }
+  
+    p{
+      font-size: 18px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    a{
+      padding: 15px 40px;
+      border: 2px solid $main_color;
+      display: block;
+      border-radius: 40px;
+      text-decoration: none;
+      width: 200px;
+      margin: 20px auto;
+      text-align: center;
+      color: $main_color;
+      background-color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+    &__bold{
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 10px;
+  
+      span{
+        font-size: 30px;
+      }
+    }
+  }
+
+  
 }
