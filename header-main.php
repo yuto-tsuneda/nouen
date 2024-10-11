@@ -55,7 +55,7 @@
       <p class="navSp__contact__number">123-567-8901</p>
       <p class="navSp__contact__ok">【受付時間】</p>
       <p class="navSp__contact__time">10:00 ~ 18:00（土日祝を除く）</p>
-      <a href="#">お問い合わせ</a>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
       </div>
     </div>
 

@@ -35,6 +35,8 @@ body a {
     padding: 100px 50px;
     border-radius: 100px;
     margin: 50px 0;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
   }
   .cf7 {
     width: 60%;
@@ -88,6 +90,102 @@ body a {
     background-color: #fff;
     border: 2px solid #93c572;
     margin: 30px auto;
+    display: inline-block;
+    border-radius: 100px;
+    color: #93c572;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .wpcf7-text {
+    width: 90%;
+  }
+  .wpcf7-textarea {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .bled {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  .content {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .content h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 30px;
+  }
+  .content__bg {
+    background-color: #fff;
+    width: 95%;
+    padding: 30px 0;
+    border-radius: 50px;
+    margin: 50px auto;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  }
+  .cf7 {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .cf7__drop {
+    margin-bottom: 30px;
+  }
+  .cf7__drop__green {
+    background-color: #93c572;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 2px 3px;
+    font-weight: lighter;
+    margin-left: 10px;
+  }
+  .cf7__name {
+    margin-bottom: 30px;
+  }
+  .cf7__tel {
+    margin-bottom: 30px;
+  }
+  .cf7__mail {
+    margin-bottom: 30px;
+  }
+  .cf7 p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .cf7__check {
+    display: inline;
+    text-align: center;
+  }
+  .cf7__button {
+    display: inline;
+    text-align: center;
+  }
+  .wpcf7-select {
+    width: 80%;
+    padding: 10px 10px;
+    border: 1px solid #93c572;
+    border-radius: 10px;
+  }
+  .wpcf7-form-control {
+    padding: 10px 10px;
+    border: 1px solid #93c572;
+    border-radius: 10px;
+  }
+  input.wpcf7-submit {
+    background-color: #fff;
+    border: 2px solid #93c572;
+    margin: 30px auto 0;
     display: inline-block;
     border-radius: 100px;
     color: #93c572;

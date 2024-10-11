@@ -27,7 +27,8 @@ body{
     width: 960px;
     margin: 0 auto;
 
-    h2{font-size: 40px;
+    h2{
+    font-size: 40px;
     background-image: url(../images/title-line.webp);
     background-position: 0 100%;
     background-size: 100%;
@@ -41,6 +42,8 @@ body{
       padding: 100px 50px;
       border-radius: 100px;
       margin: 50px 0;
+      box-shadow: 0px 3px 6px #00000029;
+
     }
   }
 
@@ -127,9 +130,114 @@ body{
 }
 
 @media screen and (max-width:900px){
+  .bled{
+    width: 95%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
 
-  
+  .content{
+    width: 95%;
+    margin: 0 auto;
 
+    h2{
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: fit-content;
+    margin-top: 30px;
+    }
 
+    &__bg{
+      background-color: #fff;
+      width: 95%;
+      padding: 30px 0;
+      border-radius: 50px;
+      margin: 50px auto;
+      box-shadow: 0px 3px 6px #00000029;
+    }
+  }
 
+  .cf7{
+
+    width: 90%;
+    margin: 0 auto;
+
+    &__drop{
+
+      margin-bottom: 30px;
+
+      &__green{
+        background-color: $main_color;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 2px 3px;
+        font-weight: lighter;
+        margin-left: 10px;
+      }
+    }
+
+    &__name{
+      margin-bottom: 30px;
+    }
+
+    &__tel{
+      margin-bottom: 30px;
+    }
+
+    &__mail{
+      margin-bottom: 30px;
+    }
+
+    p{
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__check{
+      display: inline;
+      text-align: center;
+    }
+
+    &__button{
+      display: inline;
+      text-align: center;
+    }
+  }
+
+  .wpcf7-select{
+    width: 80%;
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  .wpcf7-form-control{
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  input.wpcf7-submit{
+    background-color: #fff;
+    border: 2px solid $main_color;
+    margin: 30px auto 0 ;
+    display: inline-block;
+    border-radius: 100px;
+    color: $main_color;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .wpcf7-text{
+    width: 90%;
+  }
+
+  .wpcf7-textarea{
+    width: 90%;
+  }
 }
