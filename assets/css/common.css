@@ -421,7 +421,7 @@ body button {
     top: -600px; /* 初期状態で画面外に配置 */
   }
   .navSp.active {
-    top: 40px; /* ナビゲーションを表示する位置に移動 */
+    top: 60px; /* ナビゲーションを表示する位置に移動 */
   }
   .header__sp--humberger {
     -webkit-transition: all 0.4s ease;
