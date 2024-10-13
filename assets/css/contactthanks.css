@@ -15,6 +15,9 @@ body a {
 }
 
 @media screen and (min-width: 901px) {
+  .display__sp {
+    display: none;
+  }
   .content {
     width: 960px;
     margin: 0 auto;
@@ -60,6 +63,65 @@ body a {
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 20px;
+  }
+  .contact__gotop {
+    border-radius: 100px;
+    border: 2px solid #93c572;
+    color: #93c572;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 50px auto 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .content {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .content h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 80px;
+    margin-bottom: 50px;
+  }
+  .content__bg {
+    background-color: #fff;
+    padding: 50px 50px;
+    border-radius: 100px;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+    margin-bottom: 100px;
+  }
+  .contact__thanks {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .contact__thanks__s {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .contact__thanks__bold {
+    color: #93c572;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .contact__thanks__big {
+    font-size: 30px;
+  }
+  .contact__thanks h3 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
   }
   .contact__gotop {
     border-radius: 100px;

@@ -117,3 +117,106 @@ body a {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 900px) {
+  .content {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .content h2 {
+    font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 80px;
+  }
+  .content__bg {
+    background-color: #fff;
+    padding: 50px 50px 0;
+    border-radius: 100px;
+    margin: 50px 0;
+  }
+  .cf7__title {
+    font-weight: 600;
+  }
+  .cf7__check {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .cf7__check__green {
+    background-color: #93c572;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 2px 3px;
+    font-weight: lighter;
+    margin-left: 10px;
+  }
+  .cf7__check__drop {
+    margin-bottom: 20px;
+  }
+  .cf7__check__name {
+    margin-bottom: 20px;
+  }
+  .cf7__check__tel {
+    margin-bottom: 20px;
+  }
+  .cf7__check__mail {
+    margin-bottom: 20px;
+  }
+  .cf7__check p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .cf7__check__check {
+    display: inline;
+    text-align: center;
+  }
+  .cf7__check__button {
+    display: inline;
+    text-align: center;
+  }
+  .wpcf7-select {
+    width: 80%;
+    padding: 10px 10px;
+    border: 1px solid #93c572;
+    border-radius: 10px;
+  }
+  .wpcf7-form-control {
+    padding: 10px 10px;
+    border: 1px solid #93c572;
+    border-radius: 10px;
+  }
+  input.wpcf7-submit {
+    background-color: #fff;
+    border: 2px solid #93c572;
+    margin: 30px 0 30px -3px;
+    display: inline;
+    border-radius: 0 100px 100px 0;
+    color: #93c572;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .wpcf7-text {
+    width: 90%;
+  }
+  .wpcf7-textarea {
+    width: 90%;
+  }
+  .wpcf7-previous {
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid #93c572;
+    margin: 30px auto;
+    display: inline;
+    border-radius: 100px 0 0 100px;
+    color: #93c572;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}

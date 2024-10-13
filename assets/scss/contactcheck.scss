@@ -141,3 +141,124 @@ body{
     font-size: 14px;
   }
 }
+
+@media screen and (max-width:900px){
+
+  .content{
+    width: 95%;
+    margin: 0 auto;
+
+    h2{font-size: 40px;
+    background-image: url(../images/title-line.webp);
+    background-position: 0 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: fit-content;
+    padding-top: 80px;
+    }
+
+    &__bg{
+      background-color: #fff;
+      padding: 50px 50px 0;
+      border-radius: 100px;
+      margin: 50px 0;
+    }
+  }
+
+  .cf7__title{
+    font-weight: 600;
+  }
+
+  .cf7__check{
+
+    width: 90%;
+    margin: 0 auto;
+
+      &__green{
+        background-color: $main_color;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 2px 3px;
+        font-weight: lighter;
+        margin-left: 10px;
+      }
+
+      &__drop{
+        margin-bottom: 20px;
+      }
+
+    &__name{
+      margin-bottom: 20px;
+    }
+
+    &__tel{
+      margin-bottom: 20px;
+    }
+
+    &__mail{
+      margin-bottom: 20px;
+    }
+
+    p{
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__check{
+      display: inline;
+      text-align: center;
+    }
+
+    &__button{
+      display: inline;
+      text-align: center;
+    }
+  }
+
+  .wpcf7-select{
+    width: 80%;
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  .wpcf7-form-control{
+    padding: 10px 10px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+  }
+
+  input.wpcf7-submit{
+    background-color: #fff;
+    border: 2px solid $main_color;
+    margin: 30px 0 30px -3px;
+    display: inline;
+    border-radius: 0 100px 100px 0;
+    color: $main_color;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .wpcf7-text{
+    width: 90%;
+  }
+
+  .wpcf7-textarea{
+    width: 90%;
+  }
+
+  .wpcf7-previous{
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid $main_color;
+    margin: 30px auto;
+    display: inline;
+    border-radius: 100px 0 0 100px;
+    color: $main_color;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
